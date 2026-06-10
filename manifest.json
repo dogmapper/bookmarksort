@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "收藏夹打开次数排序",
+  "version": "1.0.0",
+  "description": "按照打开次数对收藏夹的书签地址进行排序，支持 Chrome 和 Edge 浏览器",
+  "permissions": [
+    "bookmarks",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "收藏夹打开次数排序",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>收藏夹打开次数排序</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📑 收藏夹排序</h1>
+      <div class="header-actions">
+        <select id="sortOrder">
+          <option value="desc">按打开次数降序</option>
+          <option value="asc">按打开次数升序</option>
+        </select>
+        <button id="refreshBtn" title="刷新列表">🔄</button>
+      </div>
+    </header>
+
+    <div class="stats">
+      <span>共 <strong id="totalCount">0</strong> 个书签</span>
+      <button id="clearAllBtn" class="btn-clear">清除所有记录</button>
+    </div>
+
+    <div class="list-container">
+      <div id="bookmarkList" class="bookmark-list">
+        <div class="loading">加载中...</div>
+      </div>
+    </div>
+
+    <footer>
+      <p class="tip">💡 点击书签即记录一次打开，每30秒自动检测浏览中的书签</p>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

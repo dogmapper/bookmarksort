@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 420px;
+  min-height: 400px;
+  max-height: 560px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  background-color: #f5f6fa;
+  color: #2d3436;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-height: 560px;
+}
+
+/* 头部 */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+header h1 {
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#sortOrder {
+  padding: 4px 8px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 4px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  outline: none;
+}
+
+#sortOrder option {
+  color: #2d3436;
+  background: #fff;
+}
+
+#refreshBtn {
+  padding: 4px 8px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 4px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#refreshBtn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* 统计栏 */
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  font-size: 12px;
+  color: #636e72;
+  background: #fff;
+  border-bottom: 1px solid #dfe6e9;
+  flex-shrink: 0;
+}
+
+.btn-clear {
+  padding: 2px 10px;
+  border: 1px solid #fab1a0;
+  border-radius: 4px;
+  background: #fff;
+  color: #d63031;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-clear:hover {
+  background: #d63031;
+  color: #fff;
+  border-color: #d63031;
+}
+
+/* 书签列表 */
+.list-container {
+  flex: 1;
+  overflow-y: auto;
+  background: #fff;
+}
+
+.list-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.list-container::-webkit-scrollbar-thumb {
+  background: #dfe6e9;
+  border-radius: 3px;
+}
+
+.list-container::-webkit-scrollbar-thumb:hover {
+  background: #b2bec3;
+}
+
+.bookmark-list {
+  padding: 0;
+}
+
+.loading,
+.empty {
+  text-align: center;
+  padding: 40px 16px;
+  color: #b2bec3;
+  font-size: 14px;
+}
+
+/* 书签项 */
+.bookmark-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background 0.15s;
+  gap: 10px;
+}
+
+.bookmark-item:hover {
+  background: #f8f9ff;
+}
+
+.bookmark-rank {
+  min-width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.rank-1 { background: #fdcb6e; }
+.rank-2 { background: #b2bec3; }
+.rank-3 { background: #e17055; }
+.rank-other { background: #dfe6e9; color: #636e72; }
+
+.bookmark-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.bookmark-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #2d3436;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+}
+
+.bookmark-url {
+  font-size: 11px;
+  color: #b2bec3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+}
+
+.bookmark-count {
+  min-width: 48px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.count-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: #6c5ce7;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.count-badge.zero {
+  background: #dfe6e9;
+  color: #b2bec3;
+}
+
+/* 文件夹标题 */
+.folder-title {
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6c5ce7;
+  background: #f0edff;
+  border-bottom: 1px solid #dfe6e9;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* 底部 */
+footer {
+  padding: 8px 16px;
+  border-top: 1px solid #dfe6e9;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.tip {
+  font-size: 11px;
+  color: #b2bec3;
+  text-align: center;
+}
