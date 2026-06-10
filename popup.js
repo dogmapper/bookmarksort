@@ -149,8 +149,6 @@ function handleBookmarkClick(e) {
   const url = this.dataset.url;
   if (!url) return;
 
-  // 记录点击
-  chrome.runtime.sendMessage({ type: 'RECORD_CLICK', url });
 
   // 打开书签
   chrome.tabs.create({ url, active: true });
